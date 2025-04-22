@@ -1,0 +1,20 @@
+{
+    "customer_profiles.csv": [
+        "customer_id", "name", "gender", "age", "city", "sign_up_date", "subscription_type"
+    ],
+    "billing.csv": [
+        "bill_id", "customer_id", "month", "amount_due", "amount_paid", "payment_date"
+    ],
+    "support_tickets.csv": [
+        "ticket_id", "customer_id", "complaint_category", "complaint_date", "severity"
+    ],
+    "messages_usage.txt": [
+        "sender", "receiver", "content", "date"
+    ],
+    "calls_usage.json": [
+        "caller", "receiver", "call_duration", "call_date"
+    ],
+    "internet_usage.json": [
+        "customer_id", "data_usage_gb", "website", "usage_date"
+    ]
+}
