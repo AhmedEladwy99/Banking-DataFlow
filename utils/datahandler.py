@@ -17,8 +17,7 @@ class DataHandler:
         """Saves a DataFrame to a specified path and format (default is CSV)."""
         
         if not os.path.exists(output_path):
-            logger.error(f"Error: The Path {output_path} was not found.")
-            return
+            os.makedirs(output_path)
         
         if file_name == None:
             file_name = f'{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}.{file_format}'
