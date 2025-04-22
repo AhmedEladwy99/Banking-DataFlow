@@ -1,0 +1,5 @@
+2025-04-23 01:39:16,814 [INFO] utils.datahandler - datahandler.py:90 - read_csv() :: File incoming_data/2025-04-18/14/customer_profiles.csv read successfully.
+2025-04-23 01:39:16,815 [INFO] pipeline.schema_validator - schema_validator.py:39 - validate() :: Schema validation passed for customer_profiles.csv
+2025-04-23 01:39:16,816 [INFO] pipeline.transformer.customer - customer.py:16 - transform() :: Started transforming customer profile data
+2025-04-23 01:39:19,475 [INFO] pipeline.transformer.customer - customer.py:45 - transform() :: Finished transforming customer data. Total records: 100000
+2025-04-23 01:39:21,034 [INFO] utils.datahandler - datahandler.py:42 - save() :: File Loaded successfully at archive/2025-04-23 01:39:19.csv
