@@ -20,7 +20,7 @@ class DataHandler:
             os.makedirs(output_path)
         
         if file_name == None:
-            file_name = f'{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}.{file_format}'
+            file_name = f'{datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.{file_format}'
 
         output_path = os.path.join(output_path, file_name)
 
