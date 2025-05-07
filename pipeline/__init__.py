@@ -1,8 +1,6 @@
-from .transformer import CallsUsageTransformer
 from .transformer import CustomerTransformer 
-from .transformer import InternetUsageTransformer
-
-from .transformer import MessagesUsageTransformer
+from .transformer import LoansTransformer
+from .transformer import TransactionsTransformer
 from .transformer import BillingTransformer 
 from .transformer import SupportTicketsTransformer
 

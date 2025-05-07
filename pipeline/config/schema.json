@@ -1,6 +1,6 @@
 {
     "customer_profiles.csv": [
-        "customer_id", "name", "gender", "age", "city", "sign_up_date", "subscription_type"
+        "customer_id", "name", "gender", "age", "city", "account_open_date", "product_type", "customer_tier"
     ],
     "billing.csv": [
         "bill_id", "customer_id", "month", "amount_due", "amount_paid", "payment_date"
@@ -8,13 +8,10 @@
     "support_tickets.csv": [
         "ticket_id", "customer_id", "complaint_category", "complaint_date", "severity"
     ],
-    "messages_usage.txt": [
-        "sender", "receiver", "content", "date"
+    "loans.txt": [
+        "customer_id", "loan_type", "amount_utilized", "utilization_date", "loan_reason"
     ],
-    "calls_usage.json": [
-        "caller", "receiver", "call_duration", "call_date"
-    ],
-    "internet_usage.json": [
-        "customer_id", "data_usage_gb", "website", "usage_date"
-    ]
+    "transactions.json":[
+        "sender", "receiver", "transaction_amount", "transaction_date"
+    ] 
 }

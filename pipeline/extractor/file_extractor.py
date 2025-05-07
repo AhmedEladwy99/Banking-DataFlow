@@ -15,16 +15,8 @@ logger = PipelineLogger(__name__).get_logger()
 class FileExtractor:
 
     @staticmethod
-    def extract(file_path: str) -> pd.DataFrame:
-        """
-        Extracts data from a file and returns a DataFrame.
-        
-        Args:
-            file_path (str): Full path to the data file.
-        
-        Returns:
-            pd.DataFrame: Extracted data.
-        """
+    def extract(file_path: str) -> dict:
+
         df = DataHandler.read_file(file_path)
 
         schema_validator = SchemaValidator()

@@ -4,8 +4,8 @@ import os
 import pandas as pd
 from utils import PipelineLogger
 from pipeline import FileExtractor, FileLoader
-from pipeline import CustomerTransformer, CallsUsageTransformer, SupportTicketsTransformer
-from pipeline import BillingTransformer, InternetUsageTransformer, MessagesUsageTransformer
+from pipeline import CustomerTransformer, SupportTicketsTransformer
+from pipeline import BillingTransformer, LoansTransformer, TransactionsTransformer
 
 logger = PipelineLogger(__name__).get_logger()
 
@@ -23,10 +23,9 @@ class Pipeline():
         self.__transformers = {
             'customer_profiles': CustomerTransformer, 
             'billing': BillingTransformer, 
-            'calls_usage': CallsUsageTransformer, 
-            'internet_usage': InternetUsageTransformer, 
-            'messages_usage': MessagesUsageTransformer, 
-            'support_tickets': SupportTicketsTransformer 
+            'loans': LoansTransformer, 
+            'transactions': TransactionsTransformer,
+            'support_tickets': SupportTicketsTransformer
         }
 
     def extract(self):
@@ -58,8 +57,10 @@ class Pipeline():
 
 if __name__ == '__main__':
 
-    input_file_path = 'incoming_data/2025-04-18/14/customer_profiles.csv'
+    input_file_path = 'incoming_data/2025-04-18/14/loans.txt'
     output_path = 'archive/'
 
+    print("Starting pipeline...")
     pipeline = Pipeline(input_file_path, output_path)
-    pipeline.run()
+    data = pipeline.run()  
+    print("Pipeline completed successfully")
