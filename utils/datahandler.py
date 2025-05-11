@@ -3,6 +3,7 @@ import pandas as pd
 import shutil
 from .logger import PipelineLogger
 from datetime import datetime
+from .email_alert import GmailNotifier
 logger = PipelineLogger(__name__).get_logger()
 
 
@@ -36,11 +37,13 @@ class DataHandler:
                 data_frame.to_parquet(output_path, index=False)
             else:
                 logger.error(f"Error: Unsupported file format '{file_format}'.")
-                return
+                return False
 
             logger.info(f"File Loaded successfully at {output_path}")
+            return True
         except Exception as e:
             logger.error(f"Error Loading file: {e}")
+            return False
 
     @staticmethod
     def copy_file(input_path, output_path):
@@ -104,6 +107,7 @@ class DataHandler:
             logger.info(f"File {input_path} read successfully.")
             return data_frame
         except pd.errors.ParserError as e:
+
             logger.error(f"ParserError reading Text file: {e}")
         except FileNotFoundError:
             logger.error(f"Error: The file at {input_path} was not found.")

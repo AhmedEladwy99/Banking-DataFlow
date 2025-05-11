@@ -6,3 +6,5 @@ from .transformer import SupportTicketsTransformer
 
 from .extractor import FileExtractor
 from .loader import FileLoader
+
+from .pipeline import Pipeline

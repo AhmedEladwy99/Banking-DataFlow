@@ -6,6 +6,6 @@ requirements/
 pipeline/config/email_credentials.txt
 tmep/
 incoming_data/
-archive/
+sink/
 logs/
 secrets/
