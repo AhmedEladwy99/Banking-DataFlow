@@ -1,13 +1,14 @@
+import os
+import sys
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from utils import PipelineLogger
-
+from utils.logger import PipelineLogger
 logger = PipelineLogger(__name__).get_logger()
 
 class GmailNotifier:
 
-    def __init__(self, credentials_path: str = "../pipeline/config/email_credentials.txt"):
+    def __init__(self, credentials_path: str = "pipeline/config/email_credentials.txt"):
         try:
             with open(credentials_path, "r") as file:
                 self.sender = file.readline().strip()
@@ -33,4 +34,12 @@ class GmailNotifier:
         except Exception as e:
             logger.error(f"Failed to send email: {e}")
 
+
+if __name__ == "__main__":
+    notifier = GmailNotifier()
+    notifier.send_email(
+        subject="Pipeline Notification",
+        message="This is a test email from the GmailNotifier class.",
+        to_email="mail@gmail.com"
+    )
 
