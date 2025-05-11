@@ -13,3 +13,4 @@ class SupportTicketsTransformer(Transformer):
     def transform(self, df: pd.DataFrame) -> pd.DataFrame:
         #add a new column to the dataframe called age representing the number of days since the ticket was created
         df['age']= (datetime.now() - pd.to_datetime(df['complaint_date'])).dt.days
+        return df

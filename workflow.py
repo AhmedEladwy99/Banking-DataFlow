@@ -57,9 +57,9 @@ def main():
     workflow.create_pipeline('customer_profiles.csv')
     workflow.create_pipeline('loans.txt')
 
-    # workflow.create_pipeline('support_tickets.csv')
-    # workflow.create_pipeline('credit_cards_billing.csv')
-    # workflow.create_pipeline('transactions.json')
+    workflow.create_pipeline('support_tickets.csv')
+    workflow.create_pipeline('credit_cards_billing.csv')
+    workflow.create_pipeline('transactions.json')
 
     workflow.run()
 

@@ -2,7 +2,7 @@
     "customer_profiles.csv": [
         "customer_id", "name", "gender", "age", "city", "account_open_date", "product_type", "customer_tier"
     ],
-    "billing.csv": [
+    "credit_cards_billing.csv": [
         "bill_id", "customer_id", "month", "amount_due", "amount_paid", "payment_date"
     ],
     "support_tickets.csv": [
