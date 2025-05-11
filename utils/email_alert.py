@@ -34,12 +34,11 @@ class GmailNotifier:
         except Exception as e:
             logger.error(f"Failed to send email: {e}")
 
+    def send_email_if_error(self, error_message: str="الحق البايبلاين وقعت هههها:)", to_email: str="an2071497@gmail.com"):
 
-if __name__ == "__main__":
-    notifier = GmailNotifier()
-    notifier.send_email(
-        subject="Pipeline Notification",
-        message="This is a test email from the GmailNotifier class.",
-        to_email="mail@gmail.com"
-    )
+        self.send_email(
+            subject="Pipeline Notification",
+            message=f"{error_message}",
+            to_email=to_email
+        )
 
