@@ -20,7 +20,10 @@ class LoansTransformer(Transformer):
             lambda x: 
                 self.crypto_helper.encrypt(x)
             )
-        
+        df['processing_time'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        df['partition_date'] = self.partition_date
+        df['partition_hour'] = self.partition_hour
+
         return df
     
     def decrypt(self, df: pd.DataFrame) -> pd.DataFrame:

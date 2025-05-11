@@ -2,6 +2,8 @@ import os
 import sys
 import json
 import pandas as pd
+
+from utils import GmailNotifier
 from ..schema_validator import SchemaValidator
 from datetime import datetime
 
@@ -22,5 +24,9 @@ class FileLoader:
 
     def load(self):
         
-        DataHandler.save(self.__data_frame, self.__output_path, self.__file_name, self.__file_format)
-
+        res = DataHandler.save(self.__data_frame, self.__output_path, self.__file_name, self.__file_format)
+        if res:
+            logger.info(f"File Loaded successfully at {self.__output_path}")
+        else:
+            GmailNotifier().send_email_if_error(f"File Loading failed at {self.__file_name}")
+            
