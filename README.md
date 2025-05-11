@@ -1,11 +1,11 @@
-# TeleConnect-DataFlow
+# Banking-DataFlow
 
-📡 **TeleConnect-DataFlow** is a real-time data engineering pipeline designed for customer churn prediction. It processes messy, multi-format data from various telecom systems, performs complex transformations, enforces schema validation, encrypts sensitive information, and uploads cleaned data to HDFS for downstream analysis and machine learning models.
+📡 **Banking-DataFlow** is a real-time data engineering pipeline designed for customer churn prediction. It processes messy, multi-format data from various telecom systems, performs complex transformations, enforces schema validation, encrypts sensitive information, and uploads cleaned data to HDFS for downstream analysis and machine learning models.
 
 ---
 ## 🚀 Project Overview
 
-TeleConnect, a telecom company, is facing high customer churn. This project helps by:
+TeleConnect, a Banking company, is facing high customer churn. This project helps by:
 
 - Integrating and cleaning real-time data from 6 different sources (CSV, JSON, TXT).
 - Transforming and enriching datasets with calculated insights.
@@ -27,39 +27,6 @@ TeleConnect, a telecom company, is facing high customer churn. This project help
 - **Storage:** HDFS via subprocess
 - **Design:** OOP, SOLID principles
 
----
-
-## 📂 Project Structure (Suggested)
-
-```plaintext
-TeleConnect-DataFlow/
-├── incoming_data/                # Raw data organized by date/hour
-├── pipeline/
-│   ├── __init__.py
-│   ├── main.py                   # Main orchestrator
-│   ├── extractor.py
-│   ├── transformer/
-│   │   ├── base.py
-│   │   ├── customer.py
-│   │   ├── billing.py
-│   │   ├── ...
-│   ├── loader.py
-│   ├── logger.py
-│   ├── schema_validator.py
-│   ├── config/
-│   │   ├── schemas.json
-│   │   ├── paths.json
-│   │   └── email_credentials.txt
-├── logs/                         # Persistent log files
-├── archive/                      # Archived processed files
-├── utils
-│   ├── datahandler.py
-│   ├── __init__.py
-│   ├── logger.py
-│
-├── README.md
-├── .gitignore
-```
 --- 
 
 ## 🔄 Pipeline Features
