@@ -15,7 +15,7 @@ logger = PipelineLogger(__name__).get_logger()
 
 class FileLoader:
     
-    def __init__(self, data_frame: pd.DataFrame, output_path: str = "archive/", file_name: str = None, file_format='csv'):
+    def __init__(self, data_frame: pd.DataFrame, output_path: str = os.path.join("archive"), file_name: str = None, file_format='csv'):
 
         self.__output_path = output_path
         self.__data_frame = data_frame

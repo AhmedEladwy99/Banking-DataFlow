@@ -21,7 +21,7 @@ class FileExtractor:
         df = DataHandler.read_file(file_path)
 
         schema_validator = SchemaValidator()
-        file_name = file_path.split('/')[-1]
+        file_name = os.path.basename(file_path)
 
         if schema_validator.validate(file_name, df):
 
