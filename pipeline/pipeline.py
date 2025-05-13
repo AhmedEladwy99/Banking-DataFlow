@@ -15,15 +15,15 @@ class Pipeline():
     def __init__(self, input_file_path: str, output_path: str, output_file_name: str = None, output_file_format: str = 'csv'):
         self.__input_path = input_file_path
         self.__output_path = output_path
-        self.__partition_date = input_file_path.split('/')[-3]
-        self.__partion_hour = input_file_path.split('/')[-2]
+        self.__partition_date = input_file_path.split(os.sep)[-3]
+        self.__partion_hour = input_file_path.split(os.sep)[-2]
         self.__output_file_name = output_file_name
         self.__output_file_format = output_file_format
         self.__dataframe = None
-        self.__transformer_kind = input_file_path.split('/')[-1].split('.')[0]
+        self.__transformer_kind = input_file_path.split(os.sep)[-1].split('.')[0]
         self.__transformers = {
             'customer_profiles': CustomerTransformer, 
-            'billing': BillingTransformer, 
+            'credit_cards_billing': BillingTransformer, 
             'loans': LoansTransformer, 
             'transactions': TransactionsTransformer,
             'support_tickets': SupportTicketsTransformer

@@ -11,7 +11,7 @@ logger = PipelineLogger(__name__).get_logger()
 
 class SchemaValidator:
 
-    def __init__(self, schema_config_path: str = 'pipeline/config/schema.json'):
+    def __init__(self, schema_config_path: str = os.path.join('pipeline','config','schema.json')):
         """
         Initializes SchemaValidator with a hardcoded or config-based schema.
         """
